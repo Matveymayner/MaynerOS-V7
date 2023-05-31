@@ -92,7 +92,7 @@ drawButton(24, 2, 12, 3, "Reboot", 0xFFFFFF, 0x555555)
 drawButton(38, 2, 15, 3, "Random Number", 0xFFFFFF, 0x555555)
 drawButton(55, 2, 12, 3, "Delete OS", 0xFFFFFF, 0x555555)
 drawButton(69, 2, 12, 3, "Blue Screen", 0xFFFFFF, 0x555555)
-drawButton(69, 5, 12, 3, "Back to CMD", 0xFFFFFF, 0x555555) -- Добавляем кнопку "Back to CMD"
+drawButton(69, 5, 12, 3, "Back to CMD", 0xFFFFFF, 0x555555)
 
 -- Выводим нижнюю полоску с надписью "Mayner OS"
 gpu.setBackground(0xFFFFFF)
@@ -234,7 +234,7 @@ while true do
       handleCommand("5")
     end
   elseif y == 5 and x >= 69 and x <= 80 then
-    openCommandLine() -- Обрабатываем нажатие кнопки "Back to CMD"
+    runFile("init.lua")
   elseif y == 24 and x >= 1 and x <= 9 then
     message("Choose an option:\n1. Create Folder\n2. Create File\n3. Rename Item\n4. Edit File")
     local _, _, _, _, _, option = event.pull("key_down")
