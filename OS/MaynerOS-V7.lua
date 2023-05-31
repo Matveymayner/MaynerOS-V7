@@ -207,7 +207,7 @@ end
 
 -- Функция для открытия командной строки
 local function openCommandLine()
-  message("Command Line")
+  print "Print MaynerOS-V7.lua to start OS"
   while true do
     local _, _, _, _, _, command = event.pull("key_down")
     if command == 14 then
@@ -222,10 +222,8 @@ while true do
   if y == 2 then
     if x >= 10 and x <= 21 then
       handleCommand("1")
-      computer.beep(0.8)
     elseif x >= 24 and x <= 35 then
       handleCommand("2")
-      computer.beep(12)
     elseif x >= 38 and x <= 52 then
       handleCommand("3")
     elseif x >= 55 and x <= 66 then
@@ -235,6 +233,7 @@ while true do
     end
   elseif y == 5 and x >= 69 and x <= 80 then
     runFile("init.lua")
+    print "Print MaynerOS-V7.lua to start OS"
   elseif y == 24 and x >= 1 and x <= 9 then
     message("Choose an option:\n1. Create Folder\n2. Create File\n3. Rename Item\n4. Edit File")
     local _, _, _, _, _, option = event.pull("key_down")
