@@ -33,12 +33,10 @@ end
 local function handleCommand(command)
   if command == "1" then
     message("Shutting down...")
-    computer.beep(0.8, 0.3) -- Воспроизведение звукового эффекта при выключении
     os.sleep(2)
     computer.shutdown()
   elseif command == "2" then
     message("Rebooting...")
-    computer.beep(0.8, 0.3) -- Воспроизведение звукового эффекта при перезагрузке
     os.sleep(2)
     computer.shutdown(true)
   elseif command == "3" then
@@ -47,8 +45,8 @@ local function handleCommand(command)
     message("Are you sure you want to delete the OS? (y/n)")
     local _, _, _, _, _, response = event.pull("key_down")
     if response == 21 then
-      os.remove("/MaynerOS-V7.lua")
-      playSound(12, 0.5) -- Воспроизведение звукового эффекта при удалении ОС
+     os.execute("rm /MaynerOS-V7.lua")
+      os.execute("rm /autorun.lua")
       os.exit()
     else
       message("OS delete aborted.")
