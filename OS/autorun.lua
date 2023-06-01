@@ -1,1 +1,1 @@
-local success, reason = pcall(loadfile("MaynerOS-V7.lua")); if not success then print("Ошибка: " .. tostring(reason)) end
+local success, reason = pcall(loadfile("MaynerOS-V7.lua")); if not success then print("Error: " .. tostring(reason)) end
