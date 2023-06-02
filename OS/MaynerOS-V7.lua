@@ -47,7 +47,6 @@ local function handleCommand(command)
     if response == 21 then
      os.execute("rm /MaynerOS-V7.lua")
       os.execute("rm /autorun.lua")
-      os.exit()
     else
       message("OS delete aborted.")
       os.sleep(2)
